@@ -1,2 +1,10 @@
 # Ambiente virtual
 venv/
+
+# Cache
+.pytest_cache
+__pycache__
+
+# DBs
+biblioteca.db
+test.db
