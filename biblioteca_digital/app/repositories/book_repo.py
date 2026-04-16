@@ -36,15 +36,19 @@ class BookRepository:
         """Lista todos os livros com paginação."""
         return self.db.query(Book).offset(skip).limit(limit).all()
 
-    # Recebe titulo (str) e retorna lista de Book
-    def search_by_titulo(self, titulo: str) -> list[Book]:
-        """Busca livros por título (contém)."""
-        return self.db.query(Book).filter(Book.titulo.ilike(f"%{titulo}%")).all()
+    # Recebe titulo (str), skip e limit (int) e retorna lista de Book
+    def search_by_titulo(self, titulo: str, skip: int = 0, limit: int = 20) -> list[Book]:
+        """Busca livros por título com paginação."""
+        return self.db.query(Book).filter(
+            Book.titulo.ilike(f"%{titulo}%")
+        ).offset(skip).limit(limit).all()
 
-    # Recebe autor (str) e retorna lista de Book
-    def search_by_autor(self, autor: str) -> list[Book]:
-        """Busca livros por autor (contém)."""
-        return self.db.query(Book).filter(Book.autor.ilike(f"%{autor}%")).all()
+    # Recebe autor (str), skip e limit (int) e retorna lista de Book
+    def search_by_autor(self, autor: str, skip: int = 0, limit: int = 20) -> list[Book]:
+        """Busca livros por autor com paginação."""
+        return self.db.query(Book).filter(
+            Book.autor.ilike(f"%{autor}%")
+        ).offset(skip).limit(limit).all()
 
     # Recebe Book (model) e BookUpdate (schema) e retorna Book atualizado
     def update(self, book: Book, book_data: BookUpdate) -> Book:
