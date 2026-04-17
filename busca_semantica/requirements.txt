@@ -1,0 +1,11 @@
+# Embeddings - Transformers da Hugging Face
+sentence-transformers
+
+# Vector Store - FAISS para busca por similaridade
+faiss-cpu
+
+# Configuração via variáveis de ambiente
+pydantic-settings
+
+# Testes
+pytest
