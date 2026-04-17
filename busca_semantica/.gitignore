@@ -6,3 +6,7 @@ venv
 
 # Cache
 __pycache__
+
+# Índices FAISS gerados
+*.faiss
+*.docs
