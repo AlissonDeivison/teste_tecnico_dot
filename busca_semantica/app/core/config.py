@@ -9,10 +9,10 @@ class Settings(BaseSettings):
     """Configurações do sistema de busca semântica."""
 
     # Modelo de embeddings da Hugging Face (sentence-transformers)
-    # google/embeddinggemma-300m: modelo recente do Google DeepMind
-    # - 768 dimensões, suporte a 100+ idiomas
-    # - API assimétrica: encode_query() para buscas, encode_document() para docs
-    embedding_model: str = "google/embeddinggemma-300m"
+    # sentence-transformers/all-MiniLM-L6-v2: modelo leve e eficiente
+    # - 384 dimensões, suporte a múltiplos idiomas
+    # - Download automático, sem autenticação necessária
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
 
     # Caminho para salvar o índice FAISS
     faiss_index_path: str = "data/faiss_index"
