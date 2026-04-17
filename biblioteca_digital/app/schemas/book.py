@@ -5,7 +5,7 @@ Separa a representação da API do modelo de banco de dados.
 from datetime import date
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 # Schema base com campos comuns
@@ -26,9 +26,8 @@ class BookCreate(BookBase):
 class BookResponse(BookBase):
     """Dados retornados pela API, inclui o ID."""
     id: str
-
-    class Config:
-        from_attributes = True  # Permite conversão de ORM para Pydantic
+    
+    model_config = ConfigDict(from_attributes=True)  # Permite conversão de ORM para Pydantic
 
 
 # Schema para atualização parcial
