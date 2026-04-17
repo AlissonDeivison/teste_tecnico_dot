@@ -1,0 +1,13 @@
+# LangChain - Framework para aplicações com LLMs
+langchain
+langchain-openai
+
+# OpenAI - Cliente oficial da API
+openai
+
+# Configuração via variáveis de ambiente
+pydantic-settings
+python-dotenv
+
+# Testes
+pytest
